@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 import {
   ButtonStyle
 } from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title?: string
   size?: 'small' | 'medium' | 'large' | 'fullWidth'
   outlined?: true | false
@@ -14,7 +14,7 @@ interface ButtonProps {
   children?: React.ReactNode
 }
 
-export function SimpleButton({ title, size, outlined, colorScheme, fontSize, setBorderRadius, children }: ButtonProps) {
+export function SimpleButton({ title, size, outlined, colorScheme, fontSize, setBorderRadius, children, ...rest }: ButtonProps) {
   return (
     <ButtonStyle
       size={size}
@@ -22,7 +22,7 @@ export function SimpleButton({ title, size, outlined, colorScheme, fontSize, set
       outlined={outlined}
       fontSize={fontSize}
       setBorderRadius={setBorderRadius}
-
+      {...rest}
     >
       {title}
       {children}
@@ -34,5 +34,5 @@ SimpleButton.defaultProps = {
   title: 'Button',
   size: 'medium',
   colorScheme: 'gray',
-  outlined: true
+  outlined: false
 }

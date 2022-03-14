@@ -2,6 +2,7 @@
 import { styled } from '@stitches/react';
 
 export const ButtonStyle = styled('button', {
+  width: '300px',
   backgroundColor: 'gainsboro',
   borderRadius: '8px',
   padding: '8px 16px',

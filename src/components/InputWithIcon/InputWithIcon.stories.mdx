@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { InputWithIcon } from './'
+
+<Meta 
+  title="Components/InputWithIcon" 
+  component={InputWithIcon}
+/>
+
+
+# Input With Icon
+<InputWithIcon />
+
+
+Input Props
+<ArgsTable of={InputWithIcon} />
+
+
+<Canvas>
+   <Story 
+    name="default"
+    args={{
+      ...InputWithIcon.defaultProps,
+      
+    }}
+  >
+    {(args) => <InputWithIcon {...args} />}
+   </Story>
+</Canvas>

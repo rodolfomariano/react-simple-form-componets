@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { GapContainer } from './'
+import { InputWithIcon } from '../InputWithIcon'
+import { SimpleButton } from '../SimpleButton'
+
+<Meta 
+  title="Components/GapContainer" 
+  component={GapContainer}
+/>
+
+
+# Gap Container
+<GapContainer />
+
+
+Gap Props
+<ArgsTable of={GapContainer} />
+
+
+<Canvas>
+   <Story 
+    name="default"
+    args={{
+      ...GapContainer.defaultProps,
+      
+    }}
+  >
+    {(args) => (<GapContainer {...args}>
+        <InputWithIcon type='email' placeholder="Email" />
+        <InputWithIcon type='password' placeholder="Password" />
+        <SimpleButton title='Send' size='medium' />
+      </GapContainer>
+)
+    }
+   </Story>
+</Canvas>
