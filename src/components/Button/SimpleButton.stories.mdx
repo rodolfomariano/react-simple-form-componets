@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { SimpleButton } from './'
+
+<Meta 
+  title="Components/SimpleButton" 
+  component={SimpleButton}
+/>
+
+
+# Button
+<SimpleButton />
+
+
+Button Props
+<ArgsTable of={SimpleButton} />
+
+
+<Canvas>
+   <Story 
+    name="default"
+    args={{
+      ...SimpleButton.defaultProps,
+      title: "Button"
+    }}
+  >
+    {(args) => <SimpleButton {...args} />}
+   </Story>
+</Canvas>
